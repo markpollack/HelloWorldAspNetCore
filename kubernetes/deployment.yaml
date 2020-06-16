@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldaspnet
+spec:
+  selector:
+    matchLabels:
+      app: helloworldaspnet
+  template:
+    metadata:
+      labels:
+        app: helloworldaspnet
+    spec:
+      containers:
+      - name: helloworldaspnet
+        image: helloworldaspnet
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellworldaspnet
+spec:
+  selector:
+    app: helloworldaspnet
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
